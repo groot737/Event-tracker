@@ -24,7 +24,7 @@ async function logJSONData() {
 
         const exploreButton = document.createElement('button');
         exploreButton.addEventListener('click', ()=>{
-            window.location.href=`test.html?categoryID=${jsonData['categories'][i]['id']}`
+            window.location.href=`map.html?categoryID=${jsonData['categories'][i].id}`
         })
         exploreButton.textContent = 'Explore';
 

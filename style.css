@@ -27,7 +27,6 @@ header > .logo{
 }
 .banner {
     display: flex;
-    background-color: red;
     position: relative;
     justify-content: center;
     align-items: center;
