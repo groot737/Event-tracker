@@ -13,7 +13,14 @@ header{
     display: flex;
     justify-content: center;
 }
-header > img{
+
+.logo{
+    width: 138px;
+    height: 175px;
+    background-image: url('./images/logo.png');
+}
+
+header > .logo{
     position: absolute;
     z-index: 888;
     margin-top: 31px;
@@ -25,10 +32,12 @@ header > img{
     justify-content: center;
     align-items: center;
 }
-.banner > img{
+.banner-image{
+    background-image: url('./images/banner.png');
+    background-size: 100% 377px;
+    background-repeat: no-repeat;
     width: 100%;
     height: 377px;
-    /* flex-shrink: 0; */
 }
 .banner > h1{
     position: absolute;
@@ -93,4 +102,25 @@ button{
     font-weight: 500;
     line-height: 150%;
     color: white;
+}
+
+@media screen and (max-width: 548px) {
+    .logo{
+        background-image: url('./images/mobilelogo.png');
+        width: 95px;
+        height: 121px;
+    }
+    .banner-image{
+        background-image: url('./images/mobilebanner.png');
+    }
+    .banner > h1{
+        color: #FFF;
+        text-align: center;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 44px;
+    }
+    .card{
+        height: 450px;
+    }
 }
