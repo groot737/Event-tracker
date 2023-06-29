@@ -38,6 +38,14 @@ var baseMaps = {
     })
 };
 
+var baseMaps = {
+    'Satellite': satelliteLayer,
+    'OpenStreetMap': L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+    })
+};
+
 // fetch coordinates then display on map
 async function logJSONData() {
 
