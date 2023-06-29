@@ -15,15 +15,15 @@ let disaster = currentUrl.slice(currentUrl.indexOf('=') + 1)
 let greenIcon = L.icon({
     iconUrl: `./images/icons/${disaster}.png`,
 
-    iconSize: [16, 16],
-    iconAnchor: [16, 16],
+    iconSize: [24, 24],
+    iconAnchor: [24, 24],
 })
 
 // modify leaflet map style
-var Stadia_AlidadeSmoothDark = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
-    maxZoom: 20,
-    attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
-}).addTo(map);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      maxZoom: 18,
+      attribution: 'Map tiles by <a href="https://carto.com/attribution">Carto</a>, under <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. Data by <a href="http://www.openstreetmap.org/">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC BY SA</a>.'
+    }).addTo(map);
 
 // fetch coordinates then display on map
 async function logJSONData() {
