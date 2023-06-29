@@ -19,24 +19,24 @@ let greenIcon = L.icon({
     iconAnchor: [24, 24],
 })
 
-// modify leaflet map style
+// modify leaflet map
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
-  }).addTo(map);
+}).addTo(map);
 
-  var satelliteLayer = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/satellite-v9/tiles/{z}/{x}/{y}?access_token=YOUR_MAPBOX_ACCESS_TOKEN', {
+var satelliteLayer = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/satellite-v9/tiles/{z}/{x}/{y}?access_token=YOUR_MAPBOX_ACCESS_TOKEN', {
     maxZoom: 19,
     attribution: 'Map data &copy; <a href="https://www.mapbox.com/">Mapbox</a>'
-  });
+});
 
-  var baseMaps = {
+var baseMaps = {
     'Satellite': satelliteLayer,
     'OpenStreetMap': L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
-      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+        maxZoom: 19,
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
     })
-  };
+};
 
 // fetch coordinates then display on map
 async function logJSONData() {
@@ -47,13 +47,13 @@ async function logJSONData() {
     if (jsonData['events'].length > 0) {
 
         for (let i = 0; i < jsonData['events'].length; i++) {
-            
+
             let coordinates = jsonData['events'][i]['geometry'][0]['coordinates']
             let magnitudeValue = jsonData['events'][i]['geometry'][0]['magnitudeValue']
             let magnitudeUnit = jsonData['events'][i]['geometry'][0]['magnitudeUnit']
             spanArr[2].innerText = jsonData['events'][i]['geometry'][0]['date']
             let marker = L.marker([coordinates[1], coordinates[0]], { icon: greenIcon }).addTo(map)
-            
+
             // add click function to the marker
             marker.on('click', () => {
                 title.innerText = jsonData['events'][i]['title']
